@@ -1,40 +1,32 @@
-# Hi, I'm Shane Chang
+# Shane Chang
 
-I'm an AI Agent Engineer at [Lessie AI](https://lessie.ai/), based in Hong Kong. I build production AI systems for B2B people discovery, research, and outreach, with a focus on context engineering, agentic search, evaluation, and reliability.
+AI agent engineer in Shenzhen. At Superlinear I work on the core agent system behind [Lessie AI](https://lessie.ai/), an AI people-search product. Most of my recent work is on agent evaluation: checking whether an agent's output is actually correct, without leaning on another model's opinion.
 
-[LinkedIn](https://www.linkedin.com/in/shanezchang/) · [Resume](https://shanezchang.github.io/resume/en/) · [PeopleSearchBench paper](https://arxiv.org/abs/2603.27476)
+[Resume](https://shanezchang.github.io/resume/en/) · [中文简历](https://shanezchang.github.io/resume/zh/) · [LinkedIn](https://www.linkedin.com/in/shanezchang/)
 
-## What I work on
+## Publication
 
-- **AI agent architecture** — tool-using workflows, multi-agent coordination, and durable context
-- **Agentic search** — turning ambiguous business intent into verifiable people and company results
-- **Evaluation** — criteria-grounded benchmarks, model routing, and failure analysis
-- **Production reliability** — observability, fallbacks, data pipelines, and backend systems that hold up outside demos
+**[PeopleSearchBench: Evaluating AI-Powered People Search Platforms with Criteria-Grounded Verification](https://arxiv.org/abs/2603.27476)**  
+EMNLP 2026 Industry Track · corresponding author · [code](https://github.com/LessieAI/people-search-bench)
 
-## Selected work
-
-### [PeopleSearchBench](https://github.com/LessieAI/people-search-bench)
-
-A multi-dimensional benchmark for AI-powered people search across recruiting, B2B sales prospecting, expert search, and influencer/KOL discovery.
-
-- 119 real-world queries
-- Criteria-Grounded Verification for evaluating whether results satisfy the actual search intent
-- Lessie scored **65.2**, **18.5% above the runner-up**, and was the only evaluated platform to complete every task
-
-I helped lead the benchmark end to end as a core engineer, from evaluation design and cross-platform testing to the open-source release and [research paper](https://arxiv.org/abs/2603.27476).
-
-### [Lessie AI](https://lessie.ai/)
-
-I work on reliable AI agents for people search and B2B research: context engineering, search orchestration, model evaluation and routing, tool integration, fallbacks, and production delivery.
+An open benchmark of 119 multilingual queries across recruiting, B2B prospecting, expert search and influencer discovery. Rather than asking an LLM to grade results, each query is broken into criteria that can be checked independently, and every returned person is verified against live web evidence. Agreement with human annotators: Cohen's κ = 0.84.
 
 ## Open source
 
-- [mcp-hub](https://github.com/shanezchang/mcp-hub) — an extensible context and conventions hub for AI coding tools
-- [open-skills](https://github.com/shanezchang/open-skills) — reusable skills for agentic workflows
-- [shanezchang.github.io](https://github.com/shanezchang/shanezchang.github.io) — the source for my public resume and personal site
+- **[people-search-bench](https://github.com/LessieAI/people-search-bench)**: the benchmark and evaluation harness from the paper
+- **[lessie-skill](https://github.com/LessieAI/lessie-skill)**: people and company search and enrichment, packaged as a skill for Claude Code and Codex
+- **[@lessie/cli](https://www.npmjs.com/package/@lessie/cli)** and **@lessie/mcp-server**: the same agent capabilities as a CLI and an MCP server
+- **[mcp-hub](https://github.com/shanezchang/mcp-hub)**: my own MCP server hub, context and conventions for AI coding tools
 
-## Background
+## What I work on
 
-Before focusing on AI agents, I built backend and data systems across warehouse automation, supply-chain software, and large-scale Python data engineering.
+- **Tool calling and context engineering.** Restructured tools, progressive disclosure of skills and middleware context injection took our people-search eval pass rate from 26% to 63%.
+- **Agent evaluation.** Criteria-grounded verification as an alternative to LLM-as-judge.
+- **Multi-agent systems in production.** LangChain / LangGraph orchestration, model routing and fallback.
+- **Agents for internal R&D.** Codex, Claude Code and Hermes wired into code, deploys, logs and support cases through Multica.
 
-If you're working on agent evaluation, AI-powered people search, or reliable B2B automation, feel free to [connect with me on LinkedIn](https://www.linkedin.com/in/shanezchang/).
+## Before agents
+
+Backend engineer at Yangteng, where I led the move from Odoo to an in-house warehouse system handling 30K+ operations a day that passed a Deloitte IPO audit. Before that, backend and data engineer at **Tencent** (CSIG), on large-scale ad-compliance monitoring built on Kafka and Kubernetes.
+
+B.Sc. in Mathematics, Shenzhen University.
